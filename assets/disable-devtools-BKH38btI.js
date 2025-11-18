@@ -1,0 +1,1 @@
+const e=()=>{window.addEventListener("keydown",t=>{t.key==="F12"&&(t.preventDefault(),t.stopPropagation()),t.ctrlKey&&t.shiftKey&&["I","J","C"].includes(t.key.toUpperCase())&&(t.preventDefault(),t.stopPropagation()),t.ctrlKey&&t.key.toUpperCase()==="U"&&(t.preventDefault(),t.stopPropagation())}),window.addEventListener("contextmenu",t=>{t.preventDefault()})};export{e as default};
