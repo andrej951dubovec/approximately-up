@@ -1,4 +1,16 @@
 export default {
-  
-  
+  heroSubTitle: 'Stavaj, búraj, opravuj! Vytvor si úplne modulárnu vesmírnu loď z čohokoľvek, čo drží pokope dosť dlho na to, aby vzlietlo – a zisti, čo sa zlomí skôr: tvoja loď, misia alebo tvoja trpezlivosť.',
+  wishlistOnSteam: 'Pridať do želaní na Steame',
+  watchTrailer: 'Pozrieť trailer',
+  heroBadge: 'STAVAŤ · BÚRAŤ · OPRAVOVAŤ',
+  heroTags: 'Early Access · Modulárny vesmírny sandbox · Fyzikálny chaos · Prieskum vesmíru',
+  devLogAndComunity: 'Komunita',
+  wishListOnSteamWithEarlyAccess: 'Pridaj si hru do zoznamu želaní a dostaneš upozornenie, keď bude dostupná v Early Access.',
+  sandBoxBouildSpacecraft: 'Sandbox, v ktorom staviaš funkčné vesmírne stroje z chaotických dielov – a testuješ, čo všetko ešte dokáže vzlietnuť.',
+  footerGame: 'Hra',
+  footerTrailer: 'Trailer',
+  footerHowToPlay: 'Ako hrať',
+  footerGallery: 'Galéria',
+  footerSteam: 'Steam',
+  footerDiscord: 'Discord',
 }
