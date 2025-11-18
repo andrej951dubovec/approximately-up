@@ -70,6 +70,7 @@ import imgBuild from 'src/assets/011.png'
 import imgMissions from 'src/assets/014.png'
 import imgPlanets from 'src/assets/012.png'
 import imgCoop from 'src/assets/019.png'
+import { useSettingsStore } from "src/stores/settings";
 
 /*const pillItems = [
     {
@@ -91,6 +92,7 @@ import imgCoop from 'src/assets/019.png'
         desc: "Z trosiek vznikajú ďalšie stroje. Fail je súčasť designu.",
     },
 ];*/
+const links = useSettingsStore();
 
 const storyImages = {
   build: imgBuild,
@@ -112,7 +114,7 @@ const trailerUrl =
   "https://www.youtube.com/embed/L_jWHffIx5E?rel=0&modestbranding=1";
 
 function openSteam() {
-  window.open('https://store.steampowered.com/app/3904850/Approximately_Up/', '_blank');
+  links.open('steam');
 }
 
 function openDiscord() {
@@ -142,15 +144,20 @@ function scrollToTrailer() {
 }
 
 .au-scroll-top {
-  background: linear-gradient(135deg, #5f73ff, #7c42ff);
-  color: #fff;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+  background: #1b2838;
+  color: #ffffff;
+
   border-radius: 999px;
+  width: 44px;
+  height: 44px;
+
+  box-shadow: 0 12px 28px rgba(10, 20, 35, 0.9);
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .au-scroll-top:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 45px rgba(59, 130, 246, 0.6);
+  background: #223142;
+  box-shadow: 0 18px 40px rgba(15, 30, 50, 0.8);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <header class="au-nav">
+  <header :class="['au-nav', { 'au-nav--scrolled': isScrolled }]">
     <div class="au-nav__inner">
       <div class="au-nav__left">
         <img :src="logo" alt="Approximately Up" class="au-nav__logo" />
@@ -19,11 +19,28 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
 defineProps({
   logo: { type: String, required: true }
 });
 
-defineEmits(["community-click", "wishlist-click"]);
+defineEmits(['community-click', 'wishlist-click']);
+
+const isScrolled = ref(false);
+
+function onScroll() {
+  isScrolled.value = window.scrollY > 32;
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll);
+});
 </script>
 
 <style scoped>
@@ -33,11 +50,20 @@ defineEmits(["community-click", "wishlist-click"]);
   top: 0;
   left: 0;
   right: 0;
+
   backdrop-filter: blur(18px);
   background: linear-gradient(to bottom,
       rgba(3, 7, 18, 0.92),
       rgba(3, 7, 18, 0.7),
       transparent);
+
+  transition: background 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.au-nav--scrolled {
+  background: rgba(3, 7, 18, 0.96);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.85);
 }
 
 .au-nav__inner {
@@ -86,9 +112,8 @@ defineEmits(["community-click", "wishlist-click"]);
 .btn-wishlist {
   display: flex;
   align-items: center;
-  gap: 8px;
 
-  padding: 6px 14px;
+  padding: 8px 14px;
   border-radius: 12px;
 
   font-size: 0.78rem;
@@ -99,12 +124,15 @@ defineEmits(["community-click", "wishlist-click"]);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.2);
 
-  transition: 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .btn-wishlist:hover {
   background: #223142;
   color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.6);
 }
 
 @media (max-width: 599px) {
