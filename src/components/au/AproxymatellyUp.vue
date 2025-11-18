@@ -1,43 +1,43 @@
 <template>
-    <q-page class="au-page">
-        <AuNavBar :logo="logoIcon" @wishlist-click="openSteam" @community-click="openDiscord" />
+  <q-page class="au-page">
+    <AuNavBar :logo="logoIcon" @wishlist-click="openSteam" @community-click="openDiscord" />
 
-        <div class="au-page__content">
-            <AuHero :hero-image="heroHeader" title="Approximately Up"
-                subtitle="Sandbox, kde z rozbitého chaosu staviaš funkčné vesmírne stroje. Sleduj, čo je už takmer hotové – a čo sa ti ešte rozsype."
-                @wishlist-click="openSteam" @trailer-click="scrollToTrailer" />
+    <div class="au-page__content">
+      <AuHero :hero-image="heroHeader" title="Approximately Up"
+        subtitle="Sandbox, kde z rozbitého chaosu staviaš funkčné vesmírne stroje. Sleduj, čo je už takmer hotové – a čo sa ti ešte rozsype."
+        @wishlist-click="openSteam" @trailer-click="scrollToTrailer" />
 
-            <!-- <AuPillStrip :items="pillItems" /> -->
-            <au-feature-strip />
+      <!-- <AuPillStrip :items="pillItems" /> -->
+      <au-feature-strip />
 
-            <au-story-sections id="features" :images="storyImages" />
-            <au-gallery id="gallery" :shots="galleryShots" />
+      <au-story-sections id="features" :images="storyImages" />
+      <au-gallery id="gallery" :shots="galleryShots" />
 
-            <AuTrailerSection :video-url="trailerUrl" />
+      <AuTrailerSection :video-url="trailerUrl" />
 
-            <AuShowcaseRow :image="cockpit" title="Komplexné systémy, jasné rozhranie"
-                text="Riadiace panely, prepínače, displeje, telemetria – všetko navrhnuté tak, aby si presne vedel, prečo to tentoraz nefunguje."
-                :bullets="[
-                    'Prepojená elektrina, logika a thrustre',
-                    'Čitateľná spätná väzba pri chybe',
-                    'Pohľad z kokpitu, hangáru aj exteriéru'
-                ]" />
+      <AuShowcaseRow :image="cockpit" title="Komplexné systémy, jasné rozhranie"
+        text="Riadiace panely, prepínače, displeje, telemetria – všetko navrhnuté tak, aby si presne vedel, prečo to tentoraz nefunguje."
+        :bullets="[
+          'Prepojená elektrina, logika a thrustre',
+          'Čitateľná spätná väzba pri chybe',
+          'Pohľad z kokpitu, hangáru aj exteriéru'
+        ]" />
 
-            <AuShowcaseRow :image="jungleCrash" :reverse="true" title="Každý pád rozpráva príbeh"
-                text="Rozsypané rámy, odtrhnuté motory a trosky všade navôkol. Game over? Skôr nový materiál na ďalší pokus."
-                :bullets="[
-                    'Simulované poškodenie a rozpad konštrukcií',
-                    'Možnosť znovu využiť trosky',
-                    'Rozličné planéty a podmienky prostredia'
-                ]" />
+      <AuShowcaseRow :image="jungleCrash" :reverse="true" title="Každý pád rozpráva príbeh"
+        text="Rozsypané rámy, odtrhnuté motory a trosky všade navôkol. Game over? Skôr nový materiál na ďalší pokus."
+        :bullets="[
+          'Simulované poškodenie a rozpad konštrukcií',
+          'Možnosť znovu využiť trosky',
+          'Rozličné planéty a podmienky prostredia'
+        ]" />
 
-            <AuFooter :logo="logoIcon" @wishlist-click="openSteam" />
-        </div>
+      <AuFooter :logo="logoIcon" @wishlist-click="openSteam" />
+    </div>
 
-        <q-page-scroller position="bottom-right" :scroll-offset="300" :duration="300">
-            <q-btn class="au-scroll-top" round dense icon="keyboard_arrow_up" />
-        </q-page-scroller>
-    </q-page>
+    <q-page-scroller position="bottom-right" :scroll-offset="300" :duration="300">
+      <q-btn class="au-scroll-top" round dense icon="keyboard_arrow_up" />
+    </q-page-scroller>
+  </q-page>
 </template>
 
 <script setup>
@@ -58,6 +58,18 @@ import logoIcon from "src/assets/Artwork_Unity-Icon.png";
 import cockpit from "src/assets/014.png";
 import jungleCrash from "src/assets/015.png";
 
+//images
+import img1 from 'src/assets/Artwork_Pozadí-stránky.png'
+import img2 from 'src/assets/015.png'
+import img3 from 'src/assets/016.png'
+import img4 from 'src/assets/017.png'
+import img5 from 'src/assets/018.png'
+import img6 from 'src/assets/019.png'
+
+import imgBuild from 'src/assets/011.png'
+import imgMissions from 'src/assets/014.png'
+import imgPlanets from 'src/assets/012.png'
+import imgCoop from 'src/assets/019.png'
 
 /*const pillItems = [
     {
@@ -79,40 +91,39 @@ import jungleCrash from "src/assets/015.png";
         desc: "Z trosiek vznikajú ďalšie stroje. Fail je súčasť designu.",
     },
 ];*/
+
 const storyImages = {
-    build: 'src/assets/011.png',
-    missions: 'src/assets/014.png',
-    planets: 'src/assets/012.png',
-    coop: 'src/assets/019.png'
+  build: imgBuild,
+  missions: imgMissions,
+  planets: imgPlanets,
+  coop: imgCoop
 };
 
 const galleryShots = [
-    { src: 'src/assets/Artwork_Pozadí-stránky.png', alt: 'Orbit nad planétou', caption: 'Prílet na planétu, kde sa ešte nič nepokazilo – zatiaľ.' },
-    { src: 'src/assets/015.png', alt: 'Prevrátená loď', caption: 'Stav, keď ti thrustre síce fungujú, ale gravitácia tiež.' },
-    { src: 'src/assets/016.png', alt: 'Ťažký náklad', caption: 'Náklad, ktorý má pravdepodobne väčšiu hmotnosť než zvyšok lode.' },
-    { src: 'src/assets/017.png', alt: 'Výbuch pri veži', caption: 'Presný dopad. Žiaľ, nie tam, kde si pôvodne chcel pristáť.' },
-    { src: 'src/assets/018.png', alt: 'Trosky pri baobabe', caption: 'Trosky rozmetané po savane – perfektný set na ďalší pokus.' },
-    { src: 'src/assets/019.png', alt: 'Trosky pri baobabe', caption: 'Trosky rozmetané po savane – perfektný set na ďalší pokus.' },
-
-    // môžeš pridať ďalšie
+  { src: img1, alt: 'Orbit nad planétou', caption: 'Prílet na planétu, kde sa ešte nič nepokazilo – zatiaľ.' },
+  { src: img2, alt: 'Prevrátená loď', caption: 'Stav, keď ti thrustre síce fungujú, ale gravitácia tiež.' },
+  { src: img3, alt: 'Ťažký náklad', caption: 'Náklad, ktorý má pravdepodobne väčšiu hmotnosť než zvyšok lode.' },
+  { src: img4, alt: 'Výbuch pri veži', caption: 'Presný dopad. Žiaľ, nie tam, kde si pôvodne chcel pristáť.' },
+  { src: img5, alt: 'Trosky pri baobabe', caption: 'Trosky rozmetané po savane – perfektný set na ďalší pokus.' },
+  { src: img6, alt: 'Trosky pri baobabe', caption: 'Trosky rozmetané po savane – perfektný set na ďalší pokus.' }
 ];
 
 const trailerUrl =
-    "https://www.youtube.com/embed/L_jWHffIx5E?rel=0&modestbranding=1";
+  "https://www.youtube.com/embed/L_jWHffIx5E?rel=0&modestbranding=1";
 
 function openSteam() {
-    window.open('https://store.steampowered.com/app/3904850/Approximately_Up/', '_blank');
+  window.open('https://store.steampowered.com/app/3904850/Approximately_Up/', '_blank');
 }
 
 function openDiscord() {
-    window.open("https://discord.com", "_blank");
+  window.open("https://discord.com", "_blank");
 }
 
 function scrollToTrailer() {
-    const el = document.getElementById("au-trailer");
-    if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  const el = document.getElementById("au-trailer");
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 
@@ -120,26 +131,26 @@ function scrollToTrailer() {
 
 <style scoped>
 .au-page {
-    background: radial-gradient(circle at top, #020617 0, #000 70%);
-    color: #f9fafb;
-    font-family: "Rajdhani", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #020617 0, #000 70%);
+  color: #f9fafb;
+  font-family: "Rajdhani", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
 .au-page__content {
-    padding-top: 60px;
+  padding-top: 60px;
 }
 
 .au-scroll-top {
-    background: linear-gradient(135deg, #5f73ff, #7c42ff);
-    color: #fff;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
-    border-radius: 999px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  background: linear-gradient(135deg, #5f73ff, #7c42ff);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
+  border-radius: 999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .au-scroll-top:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 45px rgba(59, 130, 246, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(59, 130, 246, 0.6);
 }
 </style>
