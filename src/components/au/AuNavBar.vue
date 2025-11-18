@@ -1,5 +1,5 @@
 <template>
-  <header :class="['au-nav', { 'au-nav--scrolled': isScrolled }]">
+  <header id="app-navbar" :class="['au-nav', { 'au-nav--scrolled': isScrolled }]">
     <div class="au-nav__inner">
       <div class="au-nav__left">
         <img :src="logo" alt="Approximately Up" class="au-nav__logo" />
@@ -7,40 +7,50 @@
       </div>
 
       <div class="au-nav__right">
-        <q-btn flat dense no-caps label="Community" class="au-nav__link" @click="$emit('community-click')" />
+        <q-btn
+          flat
+          dense
+          no-caps
+          :label="$t('devLogAndComunity')"
+          class="au-nav__link"
+          @click="$emit('community-click')"
+        />
 
         <q-btn class="btn-wishlist" no-caps @click="$emit('wishlist-click')">
           <q-icon name="mdi-steam" size="20px" />
-          <span style="margin-left: 4px;">Wishlist on Steam</span>
+          <span style="margin-left: 4px;">{{ $t('wishlistOnSteam') }}</span>
         </q-btn>
+
+        <AuLanguageSwitcher />
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from "vue"
+import AuLanguageSwitcher from "./AuLanguageSwitcher.vue"
 
 defineProps({
   logo: { type: String, required: true }
-});
+})
 
-defineEmits(['community-click', 'wishlist-click']);
+defineEmits(["community-click", "wishlist-click"])
 
-const isScrolled = ref(false);
+const isScrolled = ref(false)
 
 function onScroll() {
-  isScrolled.value = window.scrollY > 32;
+  isScrolled.value = window.scrollY > 32
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-});
+  window.addEventListener("scroll", onScroll, { passive: true })
+  onScroll()
+})
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll);
-});
+  window.removeEventListener("scroll", onScroll)
+})
 </script>
 
 <style scoped>
@@ -50,15 +60,14 @@ onBeforeUnmount(() => {
   top: 0;
   left: 0;
   right: 0;
-
   backdrop-filter: blur(18px);
-  background: linear-gradient(to bottom,
-      rgba(3, 7, 18, 0.92),
-      rgba(3, 7, 18, 0.7),
-      transparent);
-
-  transition: background 0.25s ease, box-shadow 0.25s ease,
-    border-color 0.25s ease;
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 7, 18, 0.92),
+    rgba(3, 7, 18, 0.7),
+    transparent
+  );
+  transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .au-nav--scrolled {
@@ -101,7 +110,6 @@ onBeforeUnmount(() => {
 
 .au-nav__link {
   font-size: 0.8rem;
-  letter-spacing: 0.09em;
   opacity: 0.85;
 }
 
@@ -112,27 +120,19 @@ onBeforeUnmount(() => {
 .btn-wishlist {
   display: flex;
   align-items: center;
-
   padding: 8px 14px;
   border-radius: 12px;
-
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-
   background: #1b2838;
-  color: #ffffff;
+  color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-
-  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease,
-    box-shadow 0.15s ease;
+  transition: 0.2s;
 }
 
 .btn-wishlist:hover {
   background: #223142;
-  color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.6);
 }
 
 @media (max-width: 599px) {

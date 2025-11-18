@@ -2,7 +2,7 @@
     <section class="au-row">
         <div class="au-row__inner" :class="{ 'au-row__inner--reverse': reverse }">
             <div class="au-row__image">
-                <q-img :src="image" :alt="title" ratio="16/9" class="au-row__img" />
+                <q-img height="280px" :src="image" :alt="title" ratio="16/9" class="au-row__img" />
             </div>
 
             <div class="au-row__content">

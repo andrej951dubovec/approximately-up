@@ -8,6 +8,6 @@
 
 <script setup>
 
-import AproxymatellyUp from 'src/components/au/AproxymatellyUp.vue';
+import AproxymatellyUp from 'src/pages/AproxymatellyUp.vue';
 
 </script>

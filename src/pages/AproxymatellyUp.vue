@@ -1,10 +1,9 @@
 <template>
   <q-page class="au-page">
-    <AuNavBar :logo="logoIcon" @wishlist-click="openSteam" @community-click="openDiscord" />
+    <AuNavBar id="navbar" :logo="logoIcon" @wishlist-click="openSteam" @community-click="openDiscord" />
 
     <div class="au-page__content">
-      <AuHero :hero-image="heroHeader" title="Approximately Up"
-        subtitle="Sandbox, kde z rozbitého chaosu staviaš funkčné vesmírne stroje. Sleduj, čo je už takmer hotové – a čo sa ti ešte rozsype."
+      <AuHero :hero-image="heroHeader"
         @wishlist-click="openSteam" @trailer-click="scrollToTrailer" />
 
       <!-- <AuPillStrip :items="pillItems" /> -->
@@ -13,7 +12,7 @@
       <au-story-sections id="features" :images="storyImages" />
       <au-gallery id="gallery" :shots="galleryShots" />
 
-      <AuTrailerSection :video-url="trailerUrl" />
+      <AuTrailerSection id="trailer" :video-url="trailerUrl" />
 
       <AuShowcaseRow :image="cockpit" title="Komplexné systémy, jasné rozhranie"
         text="Riadiace panely, prepínače, displeje, telemetria – všetko navrhnuté tak, aby si presne vedel, prečo to tentoraz nefunguje."
@@ -49,7 +48,7 @@ import AuShowcaseRow from "src/components/au/AuShowcaseRow.vue";
 import AuFooter from "src/components/au/AuFooter.vue";
 import AuTrailerSection from "src/components/au/AuTrailerSection.vue";
 import AuFeatureStrip from 'src/components/au/AuFeatureStrip.vue';
-import AuStorySections from "./AuStorySections.vue";
+import AuStorySections from "src/components/au/AuStorySections.vue";
 
 
 import heroHeader from "src/assets/Artwork_Záhlaví-v-knihovně.png";
