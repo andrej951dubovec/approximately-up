@@ -44,7 +44,7 @@ export default defineConfig((ctx) => {
 
       vueRouterMode: "hash", // available values: 'hash', 'history'
       // vueRouterBase,
-      // vueDevtools,
+      vueDevtools: false,
       // vueOptionsAPI: false,
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
@@ -52,9 +52,12 @@ export default defineConfig((ctx) => {
       publicPath: "/approximately-up/",
       // analyze: true,
       // env: {},
-      // rawDefine: {}
       // ignorePublicFolder: true,
-      // minify: false,
+      minify: true,
+      rawDefine: {
+        __VUE_PROD_DEVTOOLS__: false,
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+      },
       // polyfillModulePreload: true,
       // distDir
 
