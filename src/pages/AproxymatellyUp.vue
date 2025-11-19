@@ -3,8 +3,7 @@
     <AuNavBar id="navbar" :logo="logoIcon" @wishlist-click="openSteam" @community-click="openDiscord" />
 
     <div class="au-page__content">
-      <AuHero :hero-image="heroHeader"
-        @wishlist-click="openSteam" @trailer-click="scrollToTrailer" />
+      <AuHero :hero-image="heroHeader" @wishlist-click="openSteam" @trailer-click="scrollToTrailer" />
 
       <!-- <AuPillStrip :items="pillItems" /> -->
       <au-feature-strip />
@@ -121,7 +120,7 @@ function openDiscord() {
 }
 
 function scrollToTrailer() {
-  const el = document.getElementById("au-trailer");
+  const el = document.getElementById("trailer");
   if (el) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }

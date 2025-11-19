@@ -41,9 +41,14 @@
 </template>
 
 <script setup>
+
 defineProps({
   heroImage: { type: String, required: true }
 });
+
+defineEmits(["trailer-click", "wishlist-click"])
+
+
 </script>
 
 <style scoped>
