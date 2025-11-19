@@ -53,7 +53,7 @@
           <a :href="steamLink" target="_blank">
             <q-icon name="mdi-steam" size="24px" />
           </a>
-          <a href="https://discord.gg/" target="_blank">
+          <a :href="discordLink" target="_blank">
             <q-icon name="mdi-discord" size="24px" />
           </a>
           <a href="https://x.com" target="_blank">
