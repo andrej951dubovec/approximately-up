@@ -28,7 +28,7 @@
               <a :href="steamLink" target="_blank" rel="noopener">{{ $t('footerSteam') }}</a>
             </li>
             <li>
-              <a href="https://discord.gg/" target="_blank" rel="noopener">{{ $t('footerDiscord') }}</a>
+              <a :href="discordLink" target="_blank" rel="noopener">{{ $t('footerDiscord') }}</a>
             </li>
           </ul>
         </div>
@@ -72,6 +72,7 @@ import { computed, onMounted } from 'vue';
 const settings = useSettingsStore();
 const year = new Date().getFullYear();
 const steamLink = computed(() => settings.steam);
+const discordLink = computed(() => settings.discord);
 
 let nav = null;
 
@@ -80,7 +81,7 @@ defineProps({
 });
 
 onMounted(() => {
-  nav = document.getElementById('navbar');  
+  nav = document.getElementById('navbar');
 });
 
 function scrollToSection(id) {
