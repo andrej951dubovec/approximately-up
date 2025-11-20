@@ -170,13 +170,13 @@ defineEmits(["trailer-click", "wishlist-click"])
 }
 
 .btn-wishlist {
-  background: #1b2838;
+  background: var(--color-secondary);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: 0.25s ease;
 }
 
 .btn-wishlist:hover {
-  background: #223142;
+  background: var(--color-primary);
 }
 
 .btn-trailer {

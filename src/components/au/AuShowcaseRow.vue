@@ -32,8 +32,8 @@ const { title, text, bullets, image, reverse } = defineProps({
 
 <style scoped>
 .au-row {
-    background: #020617;
-    color: #e5e7eb;
+    background: var(--color-primary-deep);
+    color: var(--color-surface);
 }
 
 .au-row__inner {
@@ -67,7 +67,7 @@ const { title, text, bullets, image, reverse } = defineProps({
 
 .au-row__img:hover {
     transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 26px 60px rgba(59, 130, 246, 0.45);
+    box-shadow: 0 26px 60px rgba(var(--color-accent-mid-rgb), 0.45);
 }
 
 .au-row__content h2 {

@@ -4,15 +4,8 @@
 
     <q-menu anchor="bottom right" self="top right">
       <q-list dense>
-        <q-item
-          v-for="lang in languages"
-          :key="lang.code"
-          clickable
-          v-close-popup
-          :active="locale === lang.code"
-          active-class="lang-active"
-          @click="setLang(lang.code)"
-        >
+        <q-item v-for="lang in languages" :key="lang.code" clickable v-close-popup :active="locale === lang.code"
+          active-class="lang-active" @click="setLang(lang.code)">
           <q-item-section avatar>
             <i :class="['lang-flag', `fi fi-${lang.flagCode}`]"></i>
           </q-item-section>
@@ -22,7 +15,7 @@
           </q-item-section>
 
           <q-item-section side v-if="locale === lang.code">
-            <q-icon name="mdi-check" size="20px" />
+            <q-icon name="mdi-check" size="20px" :style="{ color: 'var(--color-base-dark)' }" />
           </q-item-section>
         </q-item>
       </q-list>
@@ -48,12 +41,12 @@ function setLang(code) {
 @import "flag-icons/css/flag-icons.min.css";
 
 .au-lang-btn {
-  color: #e5e7eb;
+  color: var(--color-surface);
   padding: 4px;
 }
 
 :deep(.q-menu__content) {
-  background: radial-gradient(circle at top, #0f172a 0, #020617 40%, #000 100%);
+  background: radial-gradient(circle at top, var(--color-base-dark) 0, var(--color-primary-deep) 40%, #000 100%);
   border-radius: 12px;
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
   padding: 4px 0;
@@ -82,7 +75,7 @@ function setLang(code) {
 .lang-active {
   background: rgba(255, 255, 255, 0.18) !important;
   font-weight: 800;
-  color: #1b2838;
+  color: var(--color-secondary);
 }
 
 .lang-active .lang-flag {

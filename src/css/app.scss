@@ -1,1 +1,23 @@
-// app global css in SCSS form
+:root {
+  --color-base-rgb: 42, 15, 18; 
+  --color-base-deep-rgb: 18, 3, 4;
+
+  --color-accent-rgb: 250, 96, 96;
+  --color-accent-strong-rgb: 248, 56, 68;
+  --color-accent-soft-rgb: 248, 129, 140;
+  --color-accent-mid-rgb: 246, 59, 72;
+
+  --color-slate-mid-rgb: 184, 158, 148;
+
+  --color-primary: #422326;
+  --color-secondary: #382125;
+  --color-primary-deep: #170205;
+
+  --color-surface: #ebe5e5;
+  --color-surface-light: #fbf9f9;
+
+  --color-base-dark: #2a0f14;
+
+  --color-accent-light: #f5cbd0;
+  --color-accent-medium: #fca5b4;
+}

@@ -105,8 +105,8 @@ function scrollToSection(id) {
 <style scoped>
 .au-footer {
   position: relative;
-  background: radial-gradient(circle at top, #020617 0, #000 60%, #000);
-  color: #f9fafb;
+  background: radial-gradient(circle at top, var(--color-primary-deep) 0, #000 60%, #000);
+  color: var(--color-surface-light);
   padding-top: 40px;
   opacity: 0;
   animation: footer-fade 0.7s ease 0.2s forwards;
@@ -121,7 +121,7 @@ function scrollToSection(id) {
   height: 1px;
   background: linear-gradient(90deg,
       transparent,
-      rgba(129, 140, 248, 0.7),
+      rgba(var(--color-accent-soft-rgb), 0.7),
       transparent);
   opacity: 0.5;
 }
@@ -158,7 +158,7 @@ function scrollToSection(id) {
   inset: -8px;
   border-radius: 22px;
   background: radial-gradient(circle at 30% 0,
-      rgba(96, 165, 250, 0.4),
+      rgba(var(--color-accent-rgb), 0.4),
       transparent 60%);
   filter: blur(6px);
   opacity: 0.9;
@@ -170,7 +170,7 @@ function scrollToSection(id) {
   height: 60px;
   border-radius: 18px;
   object-fit: cover;
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+  box-shadow: 0 18px 50px rgba(var(--color-base-rgb), 0.9);
 }
 
 .au-footer__brand-text h3 {
@@ -180,7 +180,7 @@ function scrollToSection(id) {
 
 .au-footer__brand-text p {
   font-size: 0.85rem;
-  color: #e5e7eb;
+  color: var(--color-surface);
 }
 
 /* COLUMNS */
@@ -212,7 +212,7 @@ function scrollToSection(id) {
 }
 
 .au-footer__col a {
-  color: #e5e7eb;
+  color: var(--color-surface);
   text-decoration: none;
   opacity: 0.85;
 }
@@ -237,23 +237,23 @@ function scrollToSection(id) {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  background: #1b2838;
-  color: #f9fafb;
+  background: var(--color-secondary);
+  color: var(--color-surface-light);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.6);
+  box-shadow: 0 10px 28px rgba(var(--color-base-rgb), 0.6);
   transition: all 0.25s ease;
 }
 
 .au-footer__cta:hover {
-  background: #223142;
+  background: var(--color-primary);
   transform: translateY(-1px);
-  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.75);
+  box-shadow: 0 14px 36px rgba(var(--color-base-rgb), 0.75);
 }
 
 /* BOTTOM BAR */
 .au-footer__bottom {
-  border-top: 1px solid rgba(15, 23, 42, 0.9);
-  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #000);
+  border-top: 1px solid rgba(var(--color-base-rgb), 0.9);
+  background: radial-gradient(circle at top, rgba(var(--color-base-rgb), 0.9), #000);
   padding: 14px 0 16px;
 }
 
@@ -280,7 +280,7 @@ function scrollToSection(id) {
 }
 
 .au-footer__social a {
-  color: #f9fafb;
+  color: var(--color-surface-light);
   opacity: 0.85;
 }
 

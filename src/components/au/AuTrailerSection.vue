@@ -27,8 +27,8 @@ const { videoUrl } = defineProps({
 
 <style scoped>
 .au-trailer {
-  background: radial-gradient(circle at top, #020617 0, #020617 60%, #000 100%);
-  color: #e5e7eb;
+  background: radial-gradient(circle at top, var(--color-primary-deep) 0, var(--color-primary-deep) 60%, #000 100%);
+  color: var(--color-surface);
   padding: 40px 0 48px;
 }
 

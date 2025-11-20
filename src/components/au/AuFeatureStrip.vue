@@ -38,7 +38,7 @@ const items = [
 
 <style scoped>
 .au-strip {
-  background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617);
+  background: radial-gradient(circle at top, var(--color-primary-deep) 0, var(--color-primary-deep) 45%, var(--color-primary-deep));
   padding: 28px 0 24px;
 }
 
@@ -57,11 +57,11 @@ const items = [
   gap: 14px;
   padding: 16px 20px;
   background:
-    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
-    rgba(15, 23, 42, 0.96);
+    radial-gradient(circle at top left, rgba(var(--color-accent-strong-rgb), 0.18), transparent 55%),
+    rgba(var(--color-base-rgb), 0.96);
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.24);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(var(--color-slate-mid-rgb), 0.24);
+  box-shadow: 0 16px 36px rgba(var(--color-base-rgb), 0.9);
   backdrop-filter: blur(18px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease,
     background 0.2s ease;
@@ -69,16 +69,16 @@ const items = [
 
 .au-strip__item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.95);
-  border-color: rgba(129, 140, 248, 0.7);
+  box-shadow: 0 22px 48px rgba(var(--color-base-rgb), 0.95);
+  border-color: rgba(var(--color-accent-soft-rgb), 0.7);
   background:
-    radial-gradient(circle at top left, rgba(96, 165, 250, 0.24), transparent 55%),
-    rgba(15, 23, 42, 0.98);
+    radial-gradient(circle at top left, rgba(var(--color-accent-rgb), 0.24), transparent 55%),
+    rgba(var(--color-base-rgb), 0.98);
 }
 
 .au-strip__icon {
   flex-shrink: 0;
-  color: #e5e7eb;
+  color: var(--color-surface);
 }
 
 .au-strip__body {
@@ -89,14 +89,14 @@ const items = [
   font-size: 0.95rem;
   font-weight: 600;
   margin-bottom: 4px;
-  color: #e5e7eb;
+  color: var(--color-surface);
 }
 
 .au-strip__text {
   font-size: 0.8rem;
   line-height: 1.5;
   opacity: 0.85;
-  color: #cbd5f5;
+  color: var(--color-accent-light);
 }
 
 @media (max-width: 959px) {

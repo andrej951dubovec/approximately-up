@@ -7,14 +7,8 @@
       </div>
 
       <div class="au-nav__right">
-        <q-btn
-          flat
-          dense
-          no-caps
-          :label="$t('devLogAndComunity')"
-          class="au-nav__link"
-          @click="$emit('community-click')"
-        />
+        <q-btn flat dense no-caps :label="$t('devLogAndComunity')" class="au-nav__link"
+          @click="$emit('community-click')" />
 
         <q-btn class="btn-wishlist" no-caps @click="$emit('wishlist-click')">
           <q-icon name="mdi-steam" size="20px" />
@@ -61,18 +55,16 @@ onBeforeUnmount(() => {
   left: 0;
   right: 0;
   backdrop-filter: blur(18px);
-  background: linear-gradient(
-    to bottom,
-    rgba(3, 7, 18, 0.92),
-    rgba(3, 7, 18, 0.7),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      rgba(var(--color-base-deep-rgb), 0.92),
+      rgba(var(--color-base-deep-rgb), 0.7),
+      transparent);
   transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .au-nav--scrolled {
-  background: rgba(3, 7, 18, 0.96);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.85);
+  background: rgba(var(--color-base-deep-rgb), 0.96);
+  box-shadow: 0 10px 30px rgba(var(--color-base-rgb), 0.85);
 }
 
 .au-nav__inner {
@@ -124,14 +116,14 @@ onBeforeUnmount(() => {
   border-radius: 12px;
   font-size: 0.78rem;
   font-weight: 600;
-  background: #1b2838;
+  background: var(--color-secondary);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: 0.2s;
 }
 
 .btn-wishlist:hover {
-  background: #223142;
+  background: var(--color-primary);
   transform: translateY(-1px);
 }
 

@@ -5,7 +5,6 @@
     <div class="au-page__content">
       <AuHero :hero-image="heroHeader" @wishlist-click="openSteam" @trailer-click="scrollToTrailer" />
 
-      <!-- <AuPillStrip :items="pillItems" /> -->
       <au-feature-strip />
 
       <au-story-sections id="features" :images="storyImages" />
@@ -41,7 +40,6 @@
 <script setup>
 import AuNavBar from "src/components/au/AuNavBar.vue";
 import AuHero from "src/components/au/AuHero.vue";
-//import AuPillStrip from "src/components/au/AuPillStrip.vue";
 import AuGallery from "src/components/au/AuGallery.vue";
 import AuShowcaseRow from "src/components/au/AuShowcaseRow.vue";
 import AuFooter from "src/components/au/AuFooter.vue";
@@ -131,8 +129,8 @@ function scrollToTrailer() {
 
 <style scoped>
 .au-page {
-  background: radial-gradient(circle at top, #020617 0, #000 70%);
-  color: #f9fafb;
+  background: radial-gradient(circle at top, var(--color-primary-deep) 0, #000 70%);
+  color: var(--color-surface-light);
   font-family: "Rajdhani", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 }
@@ -142,7 +140,7 @@ function scrollToTrailer() {
 }
 
 .au-scroll-top {
-  background: #1b2838;
+  background: var(--color-secondary);
   color: #ffffff;
 
   border-radius: 999px;
@@ -155,7 +153,7 @@ function scrollToTrailer() {
 
 .au-scroll-top:hover {
   transform: translateY(-2px);
-  background: #223142;
+  background: var(--color-primary);
   box-shadow: 0 18px 40px rgba(15, 30, 50, 0.8);
 }
 </style>
