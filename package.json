@@ -2,7 +2,7 @@
   "name": "approximately-up",
   "version": "0.0.1",
   "description": "A computer game about building spaceships and discovering new planets.",
-  "productName": "APPROXIMATELY_UP",
+  "productName": "Approximately Up",
   "author": "Andrej Dubovec",
   "type": "module",
   "private": true,
